@@ -34,17 +34,19 @@
   },
   "dependencies": {
     "argsarray": "0.0.1",
-    "blob-util": "^1.1.1",
-    "bluebird": "^2.9.24",
+    "blob-util": "^1.3.0",
+    "bluebird": "^2.11.0",
     "debug": "^2.1.3",
     "engine.io": "^1.5.1",
     "engine.io-client": "^1.5.1",
+    "es6-promise-pool": "^2.5.0",
     "eval": "^0.1.0",
     "inherits": "^2.0.1",
     "lie": "^2.6.0",
-    "pouchdb": "^6.0.0",
+    "pouchdb": "^7.0.0",
     "pouchdb-binary-util": "^1.0.0",
-    "pouchdb-promise": "^6.0.7"
+    "pouchdb-promise": "^6.0.7",
+    "scope-eval": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "^9.0.8",

@@ -141,8 +141,35 @@ var db = new PouchDB({
   socketOptions: {}
 });
 ```
-
 The `name` and `url` are required and must point to a valid `socketPouchServer`. The `socketOptions`, if provided, are passed ver batim to Engine.io, so refer to [their documentation](https://github.com/Automattic/engine.io-client/#nodejs-with-certificates) for details.
+
+
+Authorization credentials can be passed to your database by including the your token/username and password in the PouchDB contructor parameters.
+For example when using superlogin for access to your remote couchdb database, session information can be passed in to allow authentication.
+Where you have created a server which acts as a proxy to a remote CouchDB (or CouchDB-compliant database): as described above, the remoteUrl would be modified from 'http://localhost:5984' to 'http://yoursessiontoken:yoursessionpassword@localhost:5984' for you.
+
+e.g.
+
+```js
+import superlogin from 'superlogin-client';
+
+...
+
+var session = superlogin.getSession();
+
+...
+
+var db = new PouchDB({
+  adapter: 'socket',
+  name: 'mydb',
+  url: 'ws://localhost:8080',
+  authorization: {
+    token: session.token,
+    password: session.password
+  },
+  socketOptions: {}
+});
+```
 
 ### Replication
 
