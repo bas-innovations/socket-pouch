@@ -3,8 +3,8 @@
 
 var SocketPouch = require('../lib/client');
 
-global.PouchDB = require('pouchdb')
-  .plugin(require('pouchdb-legacy-utils'));
+// global.PouchDB = require('pouchdb')
+//   .plugin(require('pouchdb-legacy-utils'));
 global.testUtils = require('../test/pouchdb/integration/utils');
 var chai = require('chai');
 global.should = chai.should();
